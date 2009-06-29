@@ -30,3 +30,4 @@ test/test_request.rb
 test/test_story.rb
 test/test_topic.rb
 test/test_user.rb
+test/test_short_url.rb
