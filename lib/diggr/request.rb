@@ -49,12 +49,17 @@ module Diggr
     private
 
     def make_request
-      Net::HTTP.start(Diggr::Constants::HOST,Diggr::Constants::PORT) do |http|
+      response = Net::HTTP.start(Diggr::Constants::HOST,Diggr::Constants::PORT) do |http|
         http.get(
           path,
           'User-Agent' => Diggr::Constants::USER_AGENT,
           'Accept' => Diggr::Constants::RESPONSE_TYPE
-        ).body
+        )
+      end
+      if response.is_a?(Net::HTTPSuccess)
+        response.body
+      else
+        raise APIError, "specified path returned a #{response.code} error"
       end
     end
 

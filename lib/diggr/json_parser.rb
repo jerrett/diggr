@@ -14,9 +14,6 @@ module Diggr
     private
 
     def build_objects_from_parsed_json(parsed_data)
-      if parsed_data.has_key?('code') && parsed_data['code'] == 404
-        raise APIError, "specified path returned a 404 error"
-      end
 
       collection_type, collection_data = cleanse_json(parsed_data)
 
