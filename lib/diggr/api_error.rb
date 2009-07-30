@@ -1,1 +1,3 @@
-class APIError < StandardError; end
+module Diggr
+  class APIError < StandardError; end
+end
