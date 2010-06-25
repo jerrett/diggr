@@ -22,7 +22,7 @@ module Diggr
       story.topic = Diggr::Topic.new_from_parsed_json(data['topic']) if data['topic']
       story.container = Diggr::Container.new_from_parsed_json(data['container']) if data['container']
       story.thumbnail = Diggr::Photo.new_from_parsed_json(data['thumbnail']) if data['thumbnail']
-      story.shorturl = Diggr::ShortUrl.new_from_parsed_json(data['shorturl'][0]) if data['shorturl']
+      story.shorturl = Diggr::ShortUrl.new_from_parsed_json(data['shorturl']) if data['shorturl']
 
       story
     end

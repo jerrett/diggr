@@ -43,10 +43,10 @@ class TestStory < Test::Unit::TestCase
         "width" => 80,
         "height" => 80
       },
-      "shorturl" => [{
+      "shorturl" => {
         "short_url" => "http://digg.com/D123JKL",
         "views" => 1
-      }],
+      },
       "href" => "http://digg.com/linux_unix/Jukebox_con_Linux"
     }
 
